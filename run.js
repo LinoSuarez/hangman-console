@@ -63,8 +63,15 @@ function hangmanGame(){
 
             word = userChoice(word, answers.letter);
             word.printFormat();
-            if (!word.completed){
-                prompt();
+
+
+            if (word.remainingGuesses <= 0){
+                console.log("Runned out of guesses!")
+                console.log("You have lost.");
+            } else {
+                if (!word.completed){
+                    prompt();
+                }
             }
           });
     }
